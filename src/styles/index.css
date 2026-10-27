@@ -1,0 +1,9 @@
+@import './fonts.css';
+@import './tailwind.css';
+@import './theme.css';
+
+@keyframes scan {
+  0% { top: 12%; }
+  50% { top: 82%; }
+  100% { top: 12%; }
+}

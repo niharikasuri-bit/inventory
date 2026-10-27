@@ -1,4 +1,4 @@
-import { AlertTriangle, Undo2, ShieldAlert } from "lucide-react";
+import { AlertTriangle, Undo2, ShieldAlert, BriefcaseMedical } from "lucide-react";
 import Android1575 from "../../../imports/Android1575-1";
 
 type ManageStockScreenProps = {
@@ -8,6 +8,7 @@ type ManageStockScreenProps = {
   onRecordReturn: () => void;
   onRecordDamaged: () => void;
   onReportDiscrepancy: () => void;
+  onRecordAefi: () => void;
 };
 
 // Renders the imported "Manage Stocks" list and overlays clickable hotspots on
@@ -19,6 +20,7 @@ export function ManageStockScreen({
   onRecordReturn,
   onRecordDamaged,
   onReportDiscrepancy,
+  onRecordAefi,
 }: ManageStockScreenProps) {
   return (
     <div className="relative h-full w-full overflow-hidden bg-[#eee]">
@@ -131,6 +133,38 @@ export function ManageStockScreen({
           </p>
           <div className="col-1 flex items-center justify-center ml-[12px] mt-[11px] relative row-1 size-[24px]">
             <AlertTriangle className="size-[24px] text-[#c84c0e]" strokeWidth={2} />
+          </div>
+        </div>
+      </button>
+
+      {/* "Record AEFI Forms and Kits" — same base card as the others, one slot below. */}
+      <button
+        type="button"
+        onClick={onRecordAefi}
+        aria-label="Record AEFI Forms and Kits"
+        className="absolute left-[16px] top-[651px] text-left"
+      >
+        <div className="grid-cols-[max-content] grid-rows-[max-content] inline-grid place-items-start relative shrink-0 leading-[0]">
+          <div className="col-1 h-[81px] ml-0 mt-0 relative row-1 w-[328px]" data-name="Cards / Base Card">
+            <div
+              className="absolute bg-white inset-0 rounded-[4px] shadow-[0px_1px_2px_0px_rgba(0,0,0,0.16)]"
+              data-name="Card / Primary"
+            />
+          </div>
+          <p
+            className="[word-break:break-word] col-1 font-['Roboto:Regular',sans-serif] font-normal leading-[normal] ml-[12px] mt-[41px] relative row-1 text-[#505a5f] text-[12px] w-[300px]"
+            style={{ fontVariationSettings: '"wdth" 100' }}
+          >
+            Record AEFI forms and kits (adrenaline) available and used.
+          </p>
+          <p
+            className="[word-break:break-word] col-1 font-['Roboto:Bold',sans-serif] font-bold leading-[normal] ml-[48px] mt-[12px] relative row-1 text-[#0b4b66] text-[18px] whitespace-nowrap"
+            style={{ fontVariationSettings: '"wdth" 100' }}
+          >
+            Record AEFI Forms and Kits
+          </p>
+          <div className="col-1 flex items-center justify-center ml-[12px] mt-[11px] relative row-1 size-[24px]">
+            <BriefcaseMedical className="size-[24px] text-[#c84c0e]" strokeWidth={2} />
           </div>
         </div>
       </button>

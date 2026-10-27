@@ -11,6 +11,7 @@ import { StockReturnScreen } from "./components/stock-receipt/StockReturnScreen"
 import { StockDamagedScreen } from "./components/stock-receipt/StockDamagedScreen";
 import { StockDiscrepancyScreen } from "./components/stock-receipt/StockDiscrepancyScreen";
 import { StockReconciliationScreen } from "./components/stock-receipt/StockReconciliationScreen";
+import { AefiFormsKitsScreen } from "./components/stock-receipt/AefiFormsKitsScreen";
 import { ReceiptsScreen } from "./components/stock-receipt/ReceiptsScreen";
 import { DetailsScreen } from "./components/stock-receipt/DetailsScreen";
 import { ScanResourcesScreen } from "./components/stock-receipt/ScanResourcesScreen";
@@ -26,6 +27,7 @@ type View =
   | "damaged"
   | "discrepancy"
   | "reconcile"
+  | "aefi"
   | "list"
   | "details"
   | "scan"
@@ -74,6 +76,12 @@ const SUCCESS_CONFIGS: Record<string, Omit<SuccessConfig, "onPrimary">> = {
     title: "Stock Reconciled Successfully",
     description: "The stock reconciliation has been completed successfully. The warehouse stock has been updated with the reconciled quantities.",
     primaryLabel: "Reconcile More Stock",
+    secondaryLabel: "Go to Home",
+  },
+  aefi: {
+    title: "AEFI Forms and Kits Recorded",
+    description: "The AEFI forms and kits have been recorded successfully.",
+    primaryLabel: "Record Again",
     secondaryLabel: "Go to Home",
   },
 };
@@ -151,6 +159,7 @@ export default function App() {
             onRecordReturn={() => setView("return")}
             onRecordDamaged={() => setView("damaged")}
             onReportDiscrepancy={() => setView("discrepancy")}
+            onRecordAefi={() => setView("aefi")}
           />
         ) : view === "issue" ? (
           <StockIssueScreen onBack={() => setView("manage")} onSubmit={() => showSuccess("issue")} />
@@ -160,6 +169,8 @@ export default function App() {
           <StockDamagedScreen onBack={() => setView("manage")} onSubmit={() => showSuccess("damaged")} />
         ) : view === "discrepancy" ? (
           <StockDiscrepancyScreen onBack={() => setView("manage")} onSubmit={() => showSuccess("discrepancy")} />
+        ) : view === "aefi" ? (
+          <AefiFormsKitsScreen onBack={() => setView("manage")} onSubmit={() => showSuccess("aefi")} />
         ) : view === "reconcile" ? (
           <StockReconciliationScreen onBack={() => setView("manage")} onSubmit={() => showSuccess("reconcile")} />
         ) : view === "scan" && selected && selectedResource ? (
@@ -219,6 +230,7 @@ export default function App() {
               else if (successKey === "damaged") setView("damaged");
               else if (successKey === "discrepancy") setView("discrepancy");
               else if (successKey === "reconcile") setView("reconcile");
+              else if (successKey === "aefi") setView("aefi");
             }}
             onSecondary={() => setView("home")}
           />

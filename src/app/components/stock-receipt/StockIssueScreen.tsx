@@ -25,8 +25,6 @@ const RESOURCES: { name: string; available: number }[] = [
   { name: "Mosquito Nets", available: 1200 },
   { name: "Insecticide Bottles", available: 340 },
   { name: "Test Kits", available: 800 },
-  { name: "AEFI Forms", available: 100 },
-  { name: "AEFI Kits (adrenaline)", available: 10 },
 ];
 
 const TRANSPORT_TYPES = ["Truck", "Van", "Motorcycle", "Cycle", "Boat", "Other"];

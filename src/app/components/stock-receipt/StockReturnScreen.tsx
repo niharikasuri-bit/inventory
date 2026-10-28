@@ -22,7 +22,7 @@ const SOURCES = [
   "Abuja Regional Store",
 ];
 
-const RESOURCES = ["Bednets", "Mosquito Nets", "Insecticide Bottles", "Test Kits", "AEFI Forms", "AEFI Kits (adrenaline)"];
+const RESOURCES = ["Bednets", "Mosquito Nets", "Insecticide Bottles", "Test Kits"];
 
 // The user's current location — stock is always returned from here (read-only).
 const CURRENT_LOCATION = "Ondo State Facility";

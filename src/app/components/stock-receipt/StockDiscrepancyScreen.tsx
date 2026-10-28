@@ -28,7 +28,7 @@ const TRANSACTIONS: DiscrepancyTransaction[] = [
     receivedTime: "10:45",
     adminUnit: "Akure North",
     teamCode: "TM-014",
-    resources: ["Bednets", "Mosquito Nets", "Insecticide Bottles", "AEFI Forms", "AEFI Kits (adrenaline)"],
+    resources: ["Bednets", "Mosquito Nets", "Insecticide Bottles"],
   },
   {
     id: "TXN-6486510",
@@ -55,8 +55,6 @@ const RESOURCE_UNITS: Record<string, string> = {
   "Mosquito Nets": "Nets",
   "Insecticide Bottles": "Bottles",
   "Test Kits": "Kits",
-  "AEFI Forms": "Forms",
-  "AEFI Kits (adrenaline)": "Kits",
 };
 
 // System-recorded expected quantity per resource (base units). Auto-filled and
@@ -66,8 +64,6 @@ const EXPECTED_QUANTITIES: Record<string, number> = {
   "Mosquito Nets": 300,
   "Insecticide Bottles": 150,
   "Test Kits": 200,
-  "AEFI Forms": 100,
-  "AEFI Kits (adrenaline)": 10,
 };
 
 const labelStyle = { fontFamily: "Roboto, sans-serif", fontWeight: 500, fontSize: "14px", color: "#0b0c0c" };

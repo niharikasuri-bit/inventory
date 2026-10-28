@@ -32,8 +32,6 @@ export const initialTransactions: Transaction[] = [
       { id: "r1", name: "Bednets", quantity: 150, status: "pending" },
       { id: "r2", name: "Mosquito Nets", quantity: 50, status: "pending" },
       { id: "r3", name: "Insecticide Bottles", quantity: 20, status: "pending" },
-      { id: "r4", name: "AEFI Forms", quantity: 100, status: "pending" },
-      { id: "r5", name: "AEFI Kits (adrenaline)", quantity: 10, status: "pending" },
     ],
   },
   {

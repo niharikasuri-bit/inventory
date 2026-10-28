@@ -36,6 +36,8 @@ const PRODUCTS: ProductLedger[] = [
   { name: "Mosquito Nets", received: 320, issued: 180, returned: 12, lost: 2, damaged: 4 },
   { name: "Insecticide Bottles", received: 210, issued: 90, returned: 8, lost: 1, damaged: 2 },
   { name: "Test Kits", received: 400, issued: 260, returned: 20, lost: 0, damaged: 6 },
+  { name: "AEFI Forms", received: 100, issued: 60, returned: 5, lost: 0, damaged: 1 },
+  { name: "AEFI Kits (adrenaline)", received: 10, issued: 6, returned: 1, lost: 0, damaged: 0 },
 ];
 
 const stockOnHand = (p: ProductLedger) => p.received - p.issued + p.returned - p.lost - p.damaged;
